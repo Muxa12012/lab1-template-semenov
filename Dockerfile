@@ -1,4 +1,4 @@
-From python:latest
+FROM python:latest
 COPY . /app
 WORKDIR /app
 EXPOSE 8080
