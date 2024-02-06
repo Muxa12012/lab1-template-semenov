@@ -1,6 +1,6 @@
 import psycopg2
 
-DB_URL = 'postgresql://postgres:FaCAf*GDGF-eDE6-FecFGDCcEcB256gA@monorail.proxy.rlwy.net:13896/railway'
+DB_URL = 'postgresql://postgres:*Ab-Fb4e1-BGcbcC-d*42EAfbdBcbGbC@monorail.proxy.rlwy.net:48280/railway'
 
 
 class DatabaseRequests:
