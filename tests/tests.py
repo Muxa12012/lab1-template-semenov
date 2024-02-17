@@ -53,3 +53,13 @@ def test_post_delete(persons):
     assert r.status_code == 204
     r = requests.get(redirected_urd)
     assert r.status_code == 400
+
+@pytest.mark.parametrize("persons", [person1, person2])
+def test_post_get(persons):
+    r = requests.post(url="http://localhost:3000/api/v1/persons", json=persons)
+    assert r.status_code == 201
+    redirected_urd = r.headers['Location']
+    person_id_dict = {"id": int(redirected_urd.split("/")[-1])}
+    r = requests.get(redirected_urd)
+    assert r.status_code == 200
+    assert r.json() == persons | person_id_dict
